@@ -149,6 +149,19 @@ class UI {
 
     cartContent.appendChild(div);
     // console.log(cartContent);
+    const removeButton = div.querySelector('.remove-item');
+    removeButton.addEventListener('click', () => {
+      const removeId = removeButton.dataset.id;
+  
+      // Remove item from cart array
+      cart = cart.filter((cartItem) => cartItem.id !== removeId);
+  
+      // Update cart values (optional, based on your implementation)
+      this.setCartValues(cart);
+  
+      // Remove item element from DOM
+      cartContent.removeChild(div);
+    });
   }
   // ? showCart() & hideCart() Method
   showCart() {
