@@ -317,37 +317,3 @@ cartItems.forEach(item => {
 
 cartTotalAmountElement.textContent = cartTotalAmount;
 
-const checkoutForm = document.getElementById('checkoutForm');
-const paymentButton = document.querySelector('.payment-button');
-const paymentMessage = document.querySelector('.payment-message');
-
-checkoutForm.addEventListener('submit', (event) => {
-  event.preventDefault(); // Prevent default form submission
-
-  // Simulate a successful payment (replace with actual payment processing)
-  const paymentSuccessful = true;
-
-  if (paymentSuccessful) {
-    // Redirect to QRIS payment page (use window.location.href)
-    window.location.href = 'qris.html'; // Replace with your actual QRIS payment page URL
-
-    // Display payment confirmation message (after redirection)
-    setTimeout(() => {
-      paymentMessage.style.display = 'block'; // Display payment confirmation message
-      paymentButton.disabled = true; // Disable payment button
-    }, 1000); // Replace with appropriate message display mechanism
-  } else {
-    // Handle unsuccessful payment (e.g., display error message)
-    alert('Payment failed. Please try again.');
-  }
-});
-
-// Simulate payment processing when the "Pay Now" button is clicked
-paymentButton.addEventListener('click', () => {
-  // Simulate payment processing (replace with actual payment logic)
-  setTimeout(() => {
-    paymentMessage.style.display = 'block'; // Display payment confirmation message
-    paymentButton.disabled = true; // Disable payment button
-  }, 1000); // Simulate a processing delay
-});
-
